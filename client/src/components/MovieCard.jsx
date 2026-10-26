@@ -78,7 +78,7 @@ export function MovieCard({ movie, onOpenDetails }) {
               e.stopPropagation();
               quickDuel(movie);
             }}
-            title="Add to Movie Duel"
+            title="Add to Movie Comp"
             className="p-2 rounded-xl bg-slate-950/80 backdrop-blur-md border border-white/10 text-slate-300 hover:text-rose-400 hover:border-rose-500/50 hover:bg-slate-900 transition-all"
           >
             <Swords className="w-4 h-4" />

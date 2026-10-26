@@ -72,7 +72,7 @@ export function Navbar({ onSelectMovie }) {
 
   const navLinks = [
     { to: '/', label: 'Discovery', icon: Compass },
-    { to: '/duel', label: 'Movie Duel', icon: Swords },
+    { to: '/duel', label: 'Movie Comp', icon: Swords },
     { to: '/recommendations', label: 'For You', icon: Sparkles },
     {
       to: '/watchlist',
@@ -92,7 +92,7 @@ export function Navbar({ onSelectMovie }) {
           </div>
           <div>
             <span className="font-extrabold text-xl tracking-tight bg-gradient-to-r from-white via-slate-100 to-slate-300 bg-clip-text text-transparent">
-              Movie<span className="text-rose-500">Duel</span>
+              Movie<span className="text-rose-500">Comp</span>
             </span>
             <span className="hidden sm:inline-block ml-2 text-[10px] uppercase font-semibold tracking-wider text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded-full border border-rose-500/20">
               Mood Engine

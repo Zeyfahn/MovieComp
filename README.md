@@ -1,4 +1,4 @@
-# Movie Duel: Mood-Based Movie Discovery and Comparison
+# Movie Comp: Mood-Based Movie Discovery and Comparison
 
 > **Find the film that fits your mood.**  
 > Built as an End-Term Software Project by **Mohammed Zohaib**  
@@ -16,7 +16,7 @@ When viewers sit down to watch a film, they almost always have a specific feelin
 Casual film viewers, movie enthusiasts, and pairs/groups looking to quickly discover films matching how they feel and settle comparisons through transparent, explainable criteria.
 
 ### The Solution
-**Movie Duel** solves this by:
+**Movie Comp** solves this by:
 1. Deriving **8 explainable mood tags** directly from authentic TMDB metadata and genre signals.
 2. Providing a **Movie Duel Arena** that pits two distinct titles against each other using a deterministic, transparent weighted algorithm (accounting for mood fit, genre preferences, rating, and runtime).
 3. Implementing **mood-aware recommendations** that explicitly explain *why* each title fits the user's taste.

@@ -43,7 +43,7 @@ export function WatchlistPage({ onOpenDetails }) {
             Your Watchlist
           </h1>
           <p className="text-sm text-slate-400 mt-1">
-            Films you've saved to watch later. Filter by mood or launch them directly into Movie Duel.
+            Films you've saved to watch later. Filter by mood or launch them directly into Movie Comp.
           </p>
         </div>
 
@@ -175,7 +175,7 @@ export function WatchlistPage({ onOpenDetails }) {
             Your Watchlist is Empty
           </h3>
           <p className="text-xs text-slate-400 mb-6">
-            Explore films by mood or run Movie Duels, then tap the bookmark icon on any film to save it here.
+            Explore films by mood or run Movie Comps, then tap the bookmark icon on any film to save it here.
           </p>
           <button
             onClick={() => navigate('/')}

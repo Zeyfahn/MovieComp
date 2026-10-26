@@ -37,7 +37,7 @@ app.get('/api/health', (req, res) => {
   res.json({
     status: 'ok',
     timestamp: new Date().toISOString(),
-    service: 'Movie Duel Mood-Based Discovery API',
+    service: 'Movie Comp Mood-Based Discovery API',
     databaseConnected: isDbConnected(),
     tmdbConfigured: !!process.env.TMDB_API_KEY,
   });
@@ -67,7 +67,7 @@ app.use((err, req, res, next) => {
 async function start() {
   await connectDB();
   app.listen(PORT, () => {
-    console.log(`🎬 Movie Duel Server running on http://localhost:${PORT}`);
+    console.log(`🎬 Movie Comp Server running on http://localhost:${PORT}`);
     console.log(`📡 Health check available at http://localhost:${PORT}/api/health`);
   });
 }

@@ -76,7 +76,7 @@ export function PreferencesModal() {
 
         <div className="flex items-center gap-2 mb-1">
           <Sliders className="w-5 h-5 text-indigo-400" />
-          <h2 className="text-xl font-extrabold text-white">Movie Duel Preferences</h2>
+          <h2 className="text-xl font-extrabold text-white">Movie Comp Preferences</h2>
         </div>
         <p className="text-xs text-slate-400 mb-6">
           Personalize your recommendation ranking and duel criteria weights.

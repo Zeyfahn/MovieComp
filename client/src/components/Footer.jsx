@@ -13,7 +13,7 @@ export function Footer() {
               <Swords className="w-4 h-4" />
             </div>
             <div>
-              <span className="font-extrabold text-base text-white">Movie<span className="text-rose-500">Duel</span></span>
+              <span className="font-extrabold text-base text-white">Movie<span className="text-rose-500">Comp</span></span>
               <p className="text-[11px] text-slate-400">Mood-Based Movie Discovery & Comparison</p>
             </div>
           </div>
@@ -21,7 +21,7 @@ export function Footer() {
           {/* Links */}
           <div className="flex flex-wrap items-center gap-6 text-slate-400">
             <Link to="/" className="hover:text-white transition-colors">Discovery</Link>
-            <Link to="/duel" className="hover:text-white transition-colors">Duel Arena</Link>
+            <Link to="/duel" className="hover:text-white transition-colors">Movie Comp</Link>
             <Link to="/recommendations" className="hover:text-white transition-colors">Recommendations</Link>
             <Link to="/watchlist" className="hover:text-white transition-colors">Watchlist</Link>
           </div>

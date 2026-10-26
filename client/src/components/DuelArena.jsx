@@ -68,7 +68,7 @@ export function DuelArena() {
           Explainable Film Comparison Engine
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-          Movie <span className="bg-gradient-to-r from-rose-500 to-indigo-500 bg-clip-text text-transparent">Duel</span> Arena
+          Movie <span className="bg-gradient-to-r from-rose-500 to-indigo-500 bg-clip-text text-transparent">Comp</span> Arena
         </h1>
         <p className="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto mt-2">
           Compare two films side-by-side. Our deterministic rule engine calculates the better match for your current mood and criteria.
@@ -397,7 +397,7 @@ export function DuelArena() {
           ) : (
             <>
               <Swords className="w-6 h-6" />
-              <span>Initiate Movie Duel</span>
+              <span>Initiate Comparison</span>
             </>
           )}
         </button>

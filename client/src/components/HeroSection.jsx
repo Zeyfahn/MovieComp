@@ -28,7 +28,7 @@ export function HeroSection({ onExploreClick }) {
 
         {/* Subtitle */}
         <p className="mt-5 text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-          Explore movies tagged by transparent heuristics over TMDB metadata. Pit any two films against each other in deterministic duels with fully explainable scoring.
+          Explore movies tagged by transparent heuristics over TMDB metadata. Pit any two films against each other in deterministic comparisons with fully explainable scoring.
         </p>
 
         {/* Call to action buttons */}
@@ -38,7 +38,7 @@ export function HeroSection({ onExploreClick }) {
             className="px-6 py-3.5 rounded-2xl font-bold text-sm bg-gradient-to-r from-rose-600 via-rose-500 to-rose-600 hover:from-rose-500 hover:to-rose-400 text-white shadow-xl shadow-rose-500/25 flex items-center gap-2 hover:scale-105 transition-all"
           >
             <Swords className="w-4 h-4" />
-            <span>Launch Movie Duel</span>
+            <span>Launch Movie Comp</span>
           </Link>
 
           <button
