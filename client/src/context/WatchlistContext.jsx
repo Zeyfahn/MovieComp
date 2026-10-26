@@ -75,7 +75,14 @@ export function WatchlistProvider({ children }) {
 
   const removeFromWatchlist = async (movieId) => {
     const numId = Number(movieId);
-    setWatchlist((prev) => prev.filter((item) => Number(item.movieId || item.id) !== numId));
+    setWatchlist((prev) => {
+      const updated = prev.filter((item) => Number(item.movieId || item.id) !== numId);
+      // Persist guest watchlist to localStorage inside the updater to avoid stale closure
+      if (!isAuthenticated) {
+        localStorage.setItem('movie_duel_guest_watchlist', JSON.stringify(updated));
+      }
+      return updated;
+    });
 
     if (isAuthenticated) {
       try {
@@ -83,9 +90,6 @@ export function WatchlistProvider({ children }) {
       } catch (err) {
         console.error('Failed to sync watchlist removal to server:', err);
       }
-    } else {
-      const updated = watchlist.filter((item) => Number(item.movieId || item.id) !== numId);
-      localStorage.setItem('movie_duel_guest_watchlist', JSON.stringify(updated));
     }
   };
 

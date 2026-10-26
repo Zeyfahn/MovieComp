@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Lock, Mail, User, AlertCircle, ArrowRight } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
@@ -10,6 +10,14 @@ export function AuthModal() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const [submitting, setSubmitting] = useState(false);
+
+  // Sync mode when modal opens with a specific mode
+  useEffect(() => {
+    if (authModalOpen) {
+      setMode(authModalMode || 'login');
+      setError(null);
+    }
+  }, [authModalOpen, authModalMode]);
 
   if (!authModalOpen) return null;
 

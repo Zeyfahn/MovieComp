@@ -63,19 +63,23 @@ export function MoviePickerModal({ onSelect, onClose, slotNumber, excludeMovieId
   // Filter and prioritize candidate movies
   const sortedAndFilteredMovies = useMemo(() => {
     const pool = movies.filter((m) => String(m.id) !== String(excludeMovieId));
+    const moodId = targetMood ? targetMood.toLowerCase() : null;
 
-    if (!targetMood) {
+    const isMatch = (movie) =>
+      moodId && movie.moods && movie.moods.some((m) => m.moodId === moodId && m.available);
+
+    if (!moodId) {
       return pool;
     }
 
     if (onlyTargetMood) {
-      return pool.filter(matchesTargetMood);
+      return pool.filter(isMatch);
     }
 
     // Sort matching movies FIRST, followed by the rest
     return [...pool].sort((a, b) => {
-      const aMatch = matchesTargetMood(a);
-      const bMatch = matchesTargetMood(b);
+      const aMatch = isMatch(a);
+      const bMatch = isMatch(b);
 
       if (aMatch && !bMatch) return -1; // a comes first
       if (!aMatch && bMatch) return 1;  // b comes first
@@ -89,8 +93,10 @@ export function MoviePickerModal({ onSelect, onClose, slotNumber, excludeMovieId
 
   const matchingCount = useMemo(() => {
     if (!targetMood) return 0;
+    const moodId = targetMood.toLowerCase();
     return movies.filter(
-      (m) => String(m.id) !== String(excludeMovieId) && matchesTargetMood(m)
+      (m) => String(m.id) !== String(excludeMovieId) &&
+             m.moods && m.moods.some((x) => x.moodId === moodId && x.available)
     ).length;
   }, [movies, excludeMovieId, targetMood]);
 
@@ -195,7 +201,9 @@ export function MoviePickerModal({ onSelect, onClose, slotNumber, excludeMovieId
             </div>
           ) : sortedAndFilteredMovies.length > 0 ? (
             sortedAndFilteredMovies.map((movie) => {
-              const isMoodMatch = matchesTargetMood(movie);
+              const isMoodMatch = targetMood
+                ? movie.moods && movie.moods.some((m) => m.moodId === targetMood.toLowerCase() && m.available)
+                : false;
 
               return (
                 <div

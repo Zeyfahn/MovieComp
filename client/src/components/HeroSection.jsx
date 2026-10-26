@@ -62,7 +62,7 @@ export function HeroSection({ onExploreClick }) {
           </div>
           <div className="p-3.5 rounded-2xl glass-panel border border-white/5">
             <div className="font-bold text-slate-200 mb-0.5">Tie Threshold Handling</div>
-            <div className="text-slate-400 text-[11px]">&lt;3 pts declared "Too close to call"</div>
+            <div className="text-slate-400 text-[11px]">{'<'}3 pts declared "Too close to call"</div>
           </div>
           <div className="p-3.5 rounded-2xl glass-panel border border-white/5">
             <div className="font-bold text-slate-200 mb-0.5">Persistent Watchlist</div>

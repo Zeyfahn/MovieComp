@@ -467,7 +467,7 @@ export function DuelArena() {
               {/* Breakdown Bars */}
               <div className="space-y-3">
                 {Object.entries(duelResult.movie1.breakdown).map(([crit, data]) => {
-                  const label = crit.replace('_', ' ');
+                  const label = crit.replaceAll('_', ' ');
                   return (
                     <div key={crit} className="text-xs">
                       <div className="flex justify-between text-slate-300 mb-1">
@@ -513,7 +513,7 @@ export function DuelArena() {
               {/* Breakdown Bars */}
               <div className="space-y-3">
                 {Object.entries(duelResult.movie2.breakdown).map(([crit, data]) => {
-                  const label = crit.replace('_', ' ');
+                  const label = crit.replaceAll('_', ' ');
                   return (
                     <div key={crit} className="text-xs">
                       <div className="flex justify-between text-slate-300 mb-1">

@@ -100,19 +100,22 @@ export function evaluateCriterion(criterion, movie, context) {
       const rating = movie.vote_average ?? movie.rating;
       const voteCount = movie.vote_count ?? 0;
 
-      if (rating === undefined || rating === null || isNaN(rating) || voteCount === 0) {
+      if (rating === undefined || rating === null || isNaN(rating) || Number(rating) === 0) {
         return {
           available: false,
           score: null,
-          reason: 'Unavailable: No TMDB rating or zero votes recorded.',
+          reason: 'Unavailable: No TMDB rating data recorded for this title.',
         };
       }
 
       const score = Math.round(Math.min(100, Math.max(0, Number(rating) * 10)));
+      const voteLabel = voteCount > 0
+        ? `${voteCount.toLocaleString()} votes`
+        : 'limited vote data';
       return {
         available: true,
         score,
-        reason: `Rating: ${Number(rating).toFixed(1)}/10 based on ${voteCount.toLocaleString()} votes.`,
+        reason: `Rating: ${Number(rating).toFixed(1)}/10 based on ${voteLabel}.`,
         voteAverage: Number(rating),
         voteCount,
       };

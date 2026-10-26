@@ -19,7 +19,7 @@ const POPULAR_GENRES = [
 ];
 
 export function PreferencesModal() {
-  const { user, isPreferencesOpen, closePreferences, updatePreferences } = useAuth();
+  const { user, isAuthenticated, isPreferencesOpen, closePreferences, updatePreferences, openAuthModal } = useAuth();
 
   const [selectedMoods, setSelectedMoods] = useState(['mind-bending', 'dark-and-intense']);
   const [selectedGenres, setSelectedGenres] = useState(['Science Fiction', 'Thriller']);
@@ -49,6 +49,7 @@ export function PreferencesModal() {
   };
 
   const handleSave = async () => {
+    if (!user) return;
     setSaved(false);
     await updatePreferences({
       moods: selectedMoods,
@@ -166,12 +167,32 @@ export function PreferencesModal() {
           </div>
         </div>
 
+        {/* Auth guard notice */}
+        {!isAuthenticated && (
+          <div className="mb-4 p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs flex items-center gap-2">
+            <Sparkles className="w-4 h-4 flex-shrink-0" />
+            <span>
+              <button
+                type="button"
+                onClick={() => { closePreferences(); openAuthModal('login'); }}
+                className="underline font-semibold hover:text-amber-200"
+              >
+                Sign in
+              </button>{' '}
+              to save your preferences across sessions. Changes below are preview-only.
+            </span>
+          </div>
+        )}
+
         {/* Save Button */}
         <button
           onClick={handleSave}
+          disabled={!isAuthenticated || saved}
           className={`w-full py-3 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all ${
             saved
               ? 'bg-emerald-600 text-white'
+              : !isAuthenticated
+              ? 'bg-slate-700 text-slate-400 cursor-not-allowed'
               : 'bg-gradient-to-r from-rose-600 to-indigo-600 hover:from-rose-500 hover:to-indigo-500 text-white shadow-lg'
           }`}
         >
@@ -181,7 +202,7 @@ export function PreferencesModal() {
               <span>Preferences Saved!</span>
             </>
           ) : (
-            <span>Save Preferences</span>
+            <span>{!isAuthenticated ? 'Sign In to Save' : 'Save Preferences'}</span>
           )}
         </button>
       </div>
