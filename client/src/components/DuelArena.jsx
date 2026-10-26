@@ -563,6 +563,7 @@ export function DuelArena() {
         <MoviePickerModal
           slotNumber={pickerModalSlot}
           excludeMovieId={pickerModalSlot === 1 ? slot2?.id : slot1?.id}
+          targetMood={selectedMood}
           onSelect={(movie) => selectMovie(movie, pickerModalSlot)}
           onClose={() => setPickerModalSlot(null)}
         />
