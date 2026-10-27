@@ -206,3 +206,8 @@ Major Features:
 This product uses the TMDB API but is not endorsed or certified by TMDB. Film metadata, titles, artwork, and descriptions are provided by [The Movie Database (TMDB)](https://www.themoviedb.org/).
 ========
 
+
+## 10. Video of the deployed website
+
+https://drive.google.com/drive/folders/15AARFl5ENRirbHVZFILsyOxqgbJCIC4o?usp=drive_link
+
