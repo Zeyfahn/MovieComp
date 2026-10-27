@@ -1,5 +1,4 @@
-const VITE_API_URL="https://moviecomp.onrender.com"
-const API_BASE_URL = VITE_API_URL || 'http://localhost:5000/api';
+const API_BASE_URL = 'https://moviecomp.onrender.com/api';
 
 
 function getAuthHeaders() {
@@ -42,7 +41,7 @@ export const api = {
   },
 
   async getTrending() {
-    return await request('/api/movies/trending');
+  return await request('/movies/trending');
   },
 
   async searchMovies(query) {
