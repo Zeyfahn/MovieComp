@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Movie Comp: Mood-Based Movie Discovery and Comparison
 
 > **Find the film that fits your mood.**  
@@ -203,3 +204,5 @@ Major Features:
 ## 9. TMDB Attribution
 
 This product uses the TMDB API but is not endorsed or certified by TMDB. Film metadata, titles, artwork, and descriptions are provided by [The Movie Database (TMDB)](https://www.themoviedb.org/).
+========
+
