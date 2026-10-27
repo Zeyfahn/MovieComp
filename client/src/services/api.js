@@ -1,4 +1,4 @@
-const VITE_API_URL="https://moviecomp.onrender.com/"
+const VITE_API_URL="https://moviecomp.onrender.com"
 const API_BASE_URL = VITE_API_URL || 'http://localhost:5000/api';
 
 
