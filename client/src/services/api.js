@@ -40,7 +40,7 @@ export const api = {
   },
 
   async getTrending() {
-    return await request('/movies/trending');
+    return await request('/api/movies/trending');
   },
 
   async searchMovies(query) {
